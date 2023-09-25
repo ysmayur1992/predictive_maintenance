@@ -1,12 +1,9 @@
 from flask import Flask,request,render_template
-import numpy as np
-import pandas as pd
+
 
 from src.pipeline.prediction_pipeline import CustomData,PredictPipeline
 
-application=Flask(__name__)
-
-app=application
+app=Flask(__name__)
 
 ## Route for a home page
 
