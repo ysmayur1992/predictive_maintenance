@@ -47,11 +47,11 @@ class CustomData:
         try:
             custom_data_input_dict = {
                 "Type": [self.type],
-                "Air_Temperature": [self.air_temperature],
-                "Process_Temperature": [self.process_temperature],
-                "Rotational_Speed": [self.rotational_speed],
-                "Torque": [self.torque],
-                "Tool_Wear": [self.tool_wear],
+                "Air temperature [K]": [self.air_temperature],
+                "Process temperature [K]": [self.process_temperature],
+                "Rotational speed [rpm]": [self.rotational_speed],
+                "Torque [Nm]": [self.torque],
+                "Tool wear [min]": [self.tool_wear],
                 "Power": [self.power],
             }
 

@@ -1,0 +1,65 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Machine Maintenance Prediction</h1>
+   
+       <form action="{{ url_for('predict_data')}}" method="post">
+        <h1>
+            <legend>Note: If values of your machines fall below or above the given ranges then it is strongly recommended to service that machine</legend>
+        </h1>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Machine Type</label>
+            <select class="form-control" name="type" placeholder="Enter Type of Machine" required>
+                <option class="placeholder" selected disabled value="">Select Type of Machine</option>
+                <option value="M">
+                    M
+                </option>
+                <option value="L">
+                    L
+                </option>
+                <option value="H">
+                    H
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Air Temperature from 250 K to 350 K</label>
+            <input class="form-control" type="number" name="air_temperature"
+                placeholder="Enter your Air Temperature" min='250' max='350' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Process Temperature from 300 K to 320 K</label>
+            <input class="form-control" type="number" name="process_temperature"
+                placeholder="Enter your History score" min='300' max='320' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Rotational Speed from 1100 RPM to 3000 RPM</label>
+            <input class="form-control" type="number" name="rotational_speed"
+                placeholder="Enter your Rotational Speed" min='1100' max='3000' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Torque Input from 3 Nm to 80 Nm</label>
+            <input class="form-control" type="number" name="torque"
+                placeholder="Enter Torque value" min='3' max='80' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Tool Wear input from 0 minutes to 255 minutes</label>
+            <input class="form-control" type="number" name="tool_wear"
+                placeholder="Enter Tool Wear in Minutes" min='0' max='255' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Power Input from 10500 W to 99990 Nm</label>
+            <input class="form-control" type="number" name="power"
+                placeholder="Enter Torque value in Nm" min='10500' max='99990' />
+        </div>
+        
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Get Status of Machine" required />
+        </div>
+    </form>
+    <h2>
+       {{results}}
+    </h2>
+   <body>
+</html>

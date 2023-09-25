@@ -9,12 +9,12 @@ app=Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html') 
+    return render_template('homepage.html') 
 
-@app.route('/predictdata',methods=['GET','POST'])
-def predict_datapoint():
+@app.route('/predict',methods=['GET','POST'])
+def predict_data():
     if request.method=='GET':
-        return render_template('home.html')
+        return render_template('input.html')
     else:
         data=CustomData(
             type=request.form.get('type'),
@@ -34,7 +34,10 @@ def predict_datapoint():
         print("Mid Prediction")
         results=predict_pipeline.predict(pred_df)
         print("after Prediction")
-        return render_template('home.html',results=results[0])
+        res = "Your Machine is good to go !!!"
+        if results[0] == 0:
+            res = "The Machine Urgently Needs Maintenance"
+        return render_template('input.html',results=res)
     
 
 if __name__=="__main__":
