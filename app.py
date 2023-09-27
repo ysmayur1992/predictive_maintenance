@@ -35,7 +35,7 @@ def predict_data():
         results=predict_pipeline.predict(pred_df)
         print("after Prediction")
         res = "Your Machine is good to go !!!"
-        if results[0] == 0:
+        if results[0] == 1:
             res = "The Machine Urgently Needs Maintenance"
         return render_template('input.html',results=res)
     
